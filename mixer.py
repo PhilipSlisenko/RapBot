@@ -19,4 +19,6 @@ def mix_song(speech: bytes) -> bytes:
 
 def get_minus_path(all_minuses_root: str = './minuses') -> str:
     all_minuses_paths = [file_ for file_ in os.listdir(all_minuses_root) if file_.endswith('.ogg')]
-    return random.choice(all_minuses_paths)
+    random_minus_name = random.choice(all_minuses_paths)
+    random_minus_path = os.path.join(all_minuses_root, random_minus_name)
+    return random_minus_path
